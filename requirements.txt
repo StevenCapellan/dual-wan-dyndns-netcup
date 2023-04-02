@@ -1,0 +1,4 @@
+requests
+pycurl
+pause
+python-dotenv
