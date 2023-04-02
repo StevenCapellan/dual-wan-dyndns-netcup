@@ -2,8 +2,6 @@ version: "3.3"
 services:
   dyndns_python:
     build: .
-#    environment:
-#      - TZ="Europe/Berlin"
     container_name: dyndns
     volumes:
       - /etc/localtime:/etc/localtime:ro
