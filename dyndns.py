@@ -118,7 +118,10 @@ while True:
     crl.setopt(crl.WRITEDATA, b_obj)
     crl.setopt(crl.LOCALPORT, 55000)
     crl.setopt(crl.LOCALPORTRANGE, 20)
-    crl.perform()
+    try:
+        crl.perform()
+    except:
+        crl.close()
     crl.close()
     get_body = b_obj.getvalue().decode("utf-8")
     print(f"Current cable ip is {get_body}. The one pushed to DNS settings is {content_cable}.")
@@ -138,7 +141,10 @@ while True:
     crl.setopt(crl.WRITEDATA, b_obj)
     crl.setopt(crl.LOCALPORT, 55020)
     crl.setopt(crl.LOCALPORTRANGE, 20)
-    crl.perform()
+    try:
+        crl.perform()
+    except:
+        crl.close()
     crl.close()
     get_body = b_obj.getvalue().decode("utf-8")
     print(f"Current DSL ip is {get_body}. The one pushed to DNS settings is {content_dsl}.")
